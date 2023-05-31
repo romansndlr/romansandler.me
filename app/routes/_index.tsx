@@ -1,41 +1,17 @@
-import type { V2_MetaFunction } from "@remix-run/node";
-
-export const meta: V2_MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
-};
-
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div>
+      <div className="max-w-2xl">
+        <h1 className="text-5xl font-bold tracking-tight leading-tight">
+          Software designer, founder, and amateur astronaut.
+        </h1>
+        <p className="mt-8 text-lg text-zinc-700">
+          I’m Spencer, a software designer and entrepreneur based in New York
+          City. I’m the founder and CEO of Planetaria, where we develop
+          technologies that empower regular people to explore space on their own
+          terms.
+        </p>
+      </div>
     </div>
-  );
+  )
 }
