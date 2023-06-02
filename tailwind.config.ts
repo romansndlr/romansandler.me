@@ -8,6 +8,16 @@ export default {
       fontFamily: {
         sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
       },
+      animation: {
+        float: 'float 6s ease-in-out infinite',
+      },
+      keyframes: {
+        float: {
+          '50%': {
+            transform: 'translateY(1rem)',
+          },
+        },
+      },
     },
   },
   plugins: [],
