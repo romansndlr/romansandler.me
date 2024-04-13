@@ -1,0 +1,20 @@
+{
+  "dist/.vite/manifest.json": {
+    "file": "assets/manifest-Bi5CeAuV.js",
+    "name": "manifest",
+    "src": "dist/.vite/manifest.json",
+    "isDynamicEntry": true
+  },
+  "src/index.tsx": {
+    "file": "assets/index-2NrdlSbu.js",
+    "name": "index",
+    "src": "src/index.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "dist/.vite/manifest.json"
+    ],
+    "css": [
+      "assets/index-5DJcxAy5.css"
+    ]
+  }
+}
