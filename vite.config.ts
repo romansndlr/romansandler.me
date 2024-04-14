@@ -4,9 +4,11 @@ import devServer from '@hono/vite-dev-server'
 
 export default defineConfig({
   build: {
+    target: 'esnext',
     manifest: true,
     rollupOptions: {
       input: ['./src/index.tsx'],
+      external: (id) => id.includes('manifest.json'),
     },
     copyPublicDir: false,
   },
@@ -16,4 +18,7 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
+  server: {
+    port: 3000,
+  },
 })

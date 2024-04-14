@@ -1,1 +1,0 @@
-const s={"dist/.vite/manifest.json":{file:"assets/manifest-orm_g-8T.js",name:"manifest",src:"dist/.vite/manifest.json",isDynamicEntry:!0},"src/index.tsx":{file:"assets/index-BNxG_1Ui.js",name:"index",src:"src/index.tsx",isEntry:!0,dynamicImports:["dist/.vite/manifest.json"],css:["assets/index-5DJcxAy5.css"]}};export{s as default};
