@@ -54,7 +54,7 @@ app.use(
         {mainStylesPath && <link rel="stylesheet" href={mainStylesPath} />}
       </head>
       <body className="min-h-full antialiased dark:bg-black dark:text-white">
-        <div className="mx-auto flex min-h-full max-w-3xl flex-col py-10 px-6 md:py-14 md:px-8">
+        <div className="mx-auto flex h-full min-h-full max-w-3xl flex-col py-10 px-6 md:py-14 md:px-8">
           <header>
             <h1 className="text-3xl font-semibold md:text-4xl">
               <a href="/" aria-label="Home page">
