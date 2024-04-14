@@ -35,7 +35,7 @@ export async function Layout({ children }: PropsWithChildren) {
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Roman Sandler</title>
         {/* The only env where this shouldn't be applied in is Vite build time */}
         {mainStylesPath && <link rel="stylesheet" href={mainStylesPath} />}
       </head>
