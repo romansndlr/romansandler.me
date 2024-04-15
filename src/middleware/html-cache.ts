@@ -1,4 +1,4 @@
-import { MiddlewareHandler } from 'hono'
+import type { MiddlewareHandler } from 'hono'
 
 const ONE_WEEK = 60 * 60 * 24 * 7
 const FIVE_MINUTES = 60 * 5

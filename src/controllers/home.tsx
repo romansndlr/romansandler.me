@@ -1,6 +1,6 @@
-import { htmlCache } from '../middleware/html-cache'
-import { Mark } from '../components/mark'
 import { createFactory } from 'hono/factory'
+import { Mark } from '#/components/mark'
+import { htmlCache } from '#/middleware/html-cache'
 
 const factory = createFactory()
 

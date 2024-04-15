@@ -1,5 +1,5 @@
-import { htmlCache } from '../middleware/html-cache'
 import { createFactory } from 'hono/factory'
+import { htmlCache } from '#/middleware/html-cache'
 
 const factory = createFactory()
 

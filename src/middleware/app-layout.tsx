@@ -1,7 +1,7 @@
+import { clsx } from 'clsx'
+import type { PropsWithChildren } from 'hono/jsx'
 import { jsxRenderer, useRequestContext } from 'hono/jsx-renderer'
-import { Link } from '../components/link'
-import clsx from 'clsx'
-import { PropsWithChildren } from 'hono/jsx'
+import { Link } from '#/components/link'
 
 const isDev = process.env.NODE_ENV === 'development'
 

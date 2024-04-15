@@ -10,5 +10,11 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "paths": {
+      "#/*": [
+        "./src/*"
+      ],
+    },
+    "noEmit": true,
   }
 }

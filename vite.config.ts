@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
 import devServer from '@hono/vite-dev-server'
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   build: {
@@ -13,6 +14,7 @@ export default defineConfig({
     copyPublicDir: false,
   },
   plugins: [
+    tsconfigPaths(),
     devServer({
       entry: './src/index.tsx',
     }),
