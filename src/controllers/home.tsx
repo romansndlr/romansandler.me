@@ -1,15 +1,15 @@
-import { Hono } from 'hono'
 import { htmlCache } from '../middleware/html-cache'
 import { Mark } from '../components/mark'
+import { createFactory } from 'hono/factory'
 
-export const homeController = new Hono()
+const factory = createFactory()
 
-homeController.get('/', htmlCache, (c) =>
+export const homeController = factory.createHandlers(htmlCache, (c) =>
   c.render(
     <div class="space-y-6 text-2xl leading-relaxed">
       <p>
-        Hi! I'm Roman Sandler, I am a former educator turned software engineer
-        from Tel Aviv, Israel.
+        Hi! I'm Roman Sandler, I am a former educator turned software engineer.
+        I live in Tel Aviv, Israel with my wife, two boys and one dog.
       </p>
       <p>
         I love everything about building software for the web, and I love

@@ -1,8 +1,9 @@
 import { Hono } from 'hono'
 import { serveStatic } from 'hono/bun'
-import { logger } from 'hono/logger'
 import { assetCache } from './middleware/asset-cache'
 import { appLayout } from './middleware/app-layout'
+import { logger } from 'hono/logger'
+import { workController } from './controllers/work'
 import { homeController } from './controllers/home'
 import './styles/main.css'
 
@@ -25,7 +26,8 @@ app.use('*', appLayout)
  * Router
  ***************************************/
 
-app.route('/', homeController)
+app.get('/', ...homeController)
+app.get('/work', ...workController)
 
 /***************************************
  * Server
