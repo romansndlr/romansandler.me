@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { serveStatic } from 'hono/bun'
 import { logger } from 'hono/logger'
+import { baseRenderer } from './renderer'
 
 export function createRouter() {
   const app = new Hono()
@@ -15,13 +16,13 @@ export function createRouter() {
     return serveStatic({ root: './dist' })(c, next)
   })
 
-  app.use('/static/*', serveStatic({ root: './' }))
+  app.use('/public/*', serveStatic({ root: './' }))
 
   // Log all requests
   app.use(logger())
 
   // Cache all pages for 5 minutes
-  app.use(async (c, next) => {
+  app.use((c, next) => {
     const ONE_WEEK = 60 * 60 * 24 * 7
     const FIVE_MINUTES = 60 * 5
 
@@ -30,8 +31,11 @@ export function createRouter() {
       `max-age=${FIVE_MINUTES}, stale-while-revalidate=${ONE_WEEK}`,
     )
 
-    await next()
+    return next()
   })
+
+  // Render the base layout for all routes
+  app.get('*', baseRenderer)
 
   return app
 }
