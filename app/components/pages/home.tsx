@@ -1,11 +1,7 @@
-import { createFactory } from 'hono/factory'
-import { Mark } from '#/components/mark'
-import { htmlCache } from '#/middleware/html-cache'
+import { Mark } from '#/components/common/mark'
 
-const factory = createFactory()
-
-export const homeController = factory.createHandlers(htmlCache, (c) =>
-  c.render(
+export function Home() {
+  return (
     <div class="space-y-6 text-2xl leading-relaxed">
       <p>
         Hi! I'm Roman Sandler, I am a former educator turned software engineer.
@@ -20,6 +16,6 @@ export const homeController = factory.createHandlers(htmlCache, (c) =>
         <Mark>Tailwind CSS</Mark>, but I'm always playing around with new and
         exciting technologies.
       </p>
-    </div>,
-  ),
-)
+    </div>
+  )
+}
