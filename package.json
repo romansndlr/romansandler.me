@@ -6,6 +6,7 @@
     "build": "bunx --bun vite build"
   },
   "dependencies": {
+    "@hotwired/turbo": "^8.0.4",
     "hono": "^4.2.3"
   },
   "devDependencies": {

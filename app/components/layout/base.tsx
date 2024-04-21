@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'hono/jsx'
 import { Link } from '../common/link'
 import { NavLink } from '../common/nav-link'
-import { asset } from '#/utils/assets'
+import { asset } from '#/lib/assets'
 
 export async function BaseLayout({ children }: PropsWithChildren) {
   return (
@@ -10,6 +10,8 @@ export async function BaseLayout({ children }: PropsWithChildren) {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Roman Sandler's personal website" />
+        <meta name="turbo-refresh-method" content="morph" />
+        <meta name="turbo-refresh-scroll" content="preserve" />
         <title>Roman Sandler</title>
         <link rel="stylesheet" href={await asset('resources/css/app.css')} />
       </head>
@@ -38,6 +40,7 @@ export async function BaseLayout({ children }: PropsWithChildren) {
             and <Link href="https://hono.dev/">Hono</Link>
           </footer>
         </div>
+        <script type="module" src={await asset('resources/js/app.ts')} />
       </body>
     </html>
   )

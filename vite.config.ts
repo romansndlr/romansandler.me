@@ -7,7 +7,7 @@ export default defineConfig({
     manifest: true,
     copyPublicDir: false,
     rollupOptions: {
-      input: ['./resources/css/app.css'],
+      input: ['./resources/css/app.css', 'resources/js/app.ts'],
     },
   },
   plugins: [

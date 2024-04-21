@@ -1,35 +1,20 @@
-import { Hono } from 'hono'
-import { serveStatic } from 'hono/bun'
 import { jsxRenderer } from 'hono/jsx-renderer'
-import { logger } from 'hono/logger'
 import { BaseLayout } from './components/layout/base'
 import { Home } from './components/pages/home'
-import { htmlCache, assetsCache } from './middleware/assets'
+import { Talks } from './components/pages/talks'
+import { Work } from './components/pages/work'
+import { createRouter } from './lib/router'
 
-const app = new Hono()
+const router = createRouter()
 
-/***************************************
- * Middleware
- ***************************************/
+// Render the base layout for all routes
+router.get('*', jsxRenderer(BaseLayout))
 
-// Assets are compiled by Vite to the dist folder
-app.use('/assets/*', assetsCache, serveStatic({ root: './dist' }))
-
-app.use(logger())
-app.use(jsxRenderer(BaseLayout))
-app.use(htmlCache)
-
-/***************************************
- * Router
- ***************************************/
-
-app.get('/', (c) => c.render(<Home />))
-
-/***************************************
- * Server
- ***************************************/
+router.get('/', (c) => c.render(<Home />))
+router.get('/work', (c) => c.render(<Work />))
+router.get('/talks', (c) => c.render(<Talks />))
 
 export default {
   port: 3000,
-  fetch: app.fetch,
+  fetch: router.fetch,
 }

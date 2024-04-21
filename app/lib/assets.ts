@@ -12,7 +12,7 @@ export async function asset(path: string) {
   const hashedPath = viteManifest.default[key].file
 
   if (!hashedPath) {
-    throw new Error(`Could not find hashed path for ${path}`)
+    throw new Error(`Could not find hashed path] for ${path}`)
   }
 
   return hashedPath
