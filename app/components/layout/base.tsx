@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'hono/jsx'
 import { Link } from '../common/link'
 import { NavLink } from '../common/nav-link'
-import { asset } from '#/lib/assets'
+import { asset } from '#/lib/url'
 
 export async function BaseLayout({ children }: PropsWithChildren) {
   return (

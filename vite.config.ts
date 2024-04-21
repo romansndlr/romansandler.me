@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [
     tsconfigPaths(),
     devServer({
-      entry: './app/server.tsx',
+      entry: './app/index.tsx',
     }),
   ],
   server: {

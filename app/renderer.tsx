@@ -1,7 +1,7 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
-import { Link } from '../components/common/link'
-import { NavLink } from '../components/common/nav-link'
-import { asset } from './assets'
+import { Link } from '#/components/common/link'
+import { NavLink } from '#/components/common/nav-link'
+import { asset } from '#/lib/url'
 
 declare module 'hono' {
   interface ContextRenderer {
@@ -9,7 +9,7 @@ declare module 'hono' {
   }
 }
 
-export const baseRenderer = jsxRenderer(async ({ children, title }) => (
+export const renderer = jsxRenderer(async ({ children, title }) => (
   <html lang="en" className="h-full">
     <head>
       <meta charset="UTF-8" />
