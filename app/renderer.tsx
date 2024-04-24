@@ -19,7 +19,6 @@ export const renderer = jsxRenderer(async ({ children, title }) => (
       <title>Roman Sandler - {title}</title>
       <link rel="stylesheet" href={await asset('src/css/app.css')} />
       <script type="module" src={await asset('src/js/app.ts')} defer />
-      <script src="//unpkg.com/@hotwired/turbo" defer></script>
 
       {/* Initiate the dark/light mode based on the user's preference (inline to avoid FOUC) */}
       <script
